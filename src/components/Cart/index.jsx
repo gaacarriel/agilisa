@@ -3,8 +3,7 @@ import { CardCart } from "../CardCart";
 import { NoItems } from "../NoItems";
 import { CartBurgers } from "./cart";
 
-export function Cart({ listCart, setListCart, removeFromCart }){
-    console.log(listCart);
+export function Cart({ listCart, setListCart, removeFromCart, count }){
     return (
         <CartBurgers>
             <span>Carrinho de compras</span>
@@ -23,6 +22,19 @@ export function Cart({ listCart, setListCart, removeFromCart }){
                         })
                 }
             </ul>
+                {
+                    listCart.length !== 0 && (
+                    <section>
+                        <div className="total">
+                            <h5>Total</h5>
+                            <p>R$ {count}</p>
+                        </div>
+                        <button 
+                            type="button" 
+                            onClick={() => setListCart([])}
+                        >Limpar carrinho</button>
+                    </section>)
+                }
         </CartBurgers>
     )
 }

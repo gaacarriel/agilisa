@@ -1,9 +1,11 @@
-import { useState } from "react";
+/* eslint-disable eqeqeq */
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { Cart } from "../Cart";
 import { Header } from "../Header";
 import { List } from "../List";
 
-export function HomePage({ burgers, setSearchResult }){
+export function HomePage({ burgers }){
 
     // Lógica para pesquisar
     const [search, setSearch] = useState('')
@@ -20,13 +22,31 @@ export function HomePage({ burgers, setSearchResult }){
     const [listCart, setListCart] = useState([])
     function addToCart(id){
         const burgerBuyeded = burgers.filter((burger) =>  burger.id == id)
-        setListCart([...listCart, burgerBuyeded[0]])
+        setListCart([...listCart, burgerBuyeded[0]])    
+
+        const filtred = listCart.find((element) => element.id == id)
+
+        if(filtred){
+            setAndToast()
+        }
+    }
+    function setAndToast(){
+        toast.error('Você ja adicionou esse item na lista!')
+        setListCart([...listCart])
     }
 
     // Lógica para remover do carrinho
     function removeFromCart(index){
         setListCart((old) => old.filter((_, i) => index !== i ))
     }
+
+    const [count, setCount] = useState(0)
+        useEffect(() => {
+            const total = listCart.reduce((acc, cur) => {
+                return acc + cur.price
+            }, 0)
+            setCount(total)
+        }, [listCart])
 
     return (
         <>
@@ -38,7 +58,6 @@ export function HomePage({ burgers, setSearchResult }){
             />
             <main>
                 <List 
-                    burgers={burgers} 
                     filterSearch={filterSearch}
                     addToCart={addToCart}
                     />
@@ -46,6 +65,7 @@ export function HomePage({ burgers, setSearchResult }){
                     listCart={listCart} 
                     setListCart={setListCart}
                     removeFromCart={removeFromCart}
+                    count={count}
                     />
             </main>
         </>

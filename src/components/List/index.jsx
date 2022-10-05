@@ -1,7 +1,7 @@
 import { Card } from "../Card"
 import { ListBurgers } from "./list"
 
-export function List({ burgers, filterSearch, addToCart }){
+export function List({ filterSearch, addToCart }){
 
     return(
         <>

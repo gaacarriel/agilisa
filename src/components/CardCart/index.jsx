@@ -1,12 +1,16 @@
-export function CardCart({ img, name, category, removeFromCart, index }){
+import { CardCartSyled } from "./cardCart";
+
+export function CardCart({ img, name, category, removeFromCart, index, counter }){
     return (
-        <li>
+        <CardCartSyled>
             <div>
                 <img src={img} alt={name} />
             </div>
-            <p>{name}</p>
-            <p>{category}</p>
+            <div className="info">
+                <p>{name}</p>
+                <p className="category">{category}</p>
+            </div>
             <button type="button" onClick={() => removeFromCart(index)}>Remover</button>
-        </li>
+        </CardCartSyled>
     )
 }
