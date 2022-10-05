@@ -64,7 +64,13 @@ export const ListBurgers = styled.ul`
                 font-size: 14px;
                 line-height: 17px;
                 border-radius: 8px;
+                cursor: pointer;
             }
         }
+    }
+
+    @media (min-width: 1024px){
+        overflow: initial;
+        flex-wrap: wrap;
     }
 `

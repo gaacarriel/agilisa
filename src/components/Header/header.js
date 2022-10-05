@@ -6,7 +6,7 @@ export const HeaderStyled = styled.header`
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    padding-top: 15px;
+    padding: 15px 0;
 
     div{
         display: flex;
@@ -34,6 +34,7 @@ export const HeaderStyled = styled.header`
     }
 
     button{
+        color: white;
         position: absolute;
         top: 64px;
         right: 25px;
@@ -41,5 +42,28 @@ export const HeaderStyled = styled.header`
         border-radius: 8px;
         border: 2px solid var(--color-primary);
         background-color: var(--color-primary);
+        cursor: pointer;
+    }
+
+    @media (min-width: 768px){
+        button{
+            right: 44px;
+        }
+    }
+
+    @media (min-width: 1024px){
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 82px;
+
+        input{
+            width: 30%;
+            margin: 0;
+        }
+
+        button{
+            top: 21px;
+            right: 88px;
+        }
     }
 `

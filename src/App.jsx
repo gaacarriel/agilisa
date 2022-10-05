@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 import { HomePage } from "./components/HomePage";
+
+import 'react-toastify/dist/ReactToastify.min.css'
 
 
 export function App() {
@@ -18,6 +21,7 @@ export function App() {
   return (
     <div>
       <HomePage burgers={burgers} setSearchResult={setSearchResult}/>
+      <ToastContainer />
     </div>
   );
 }
