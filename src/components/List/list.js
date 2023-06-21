@@ -7,6 +7,7 @@ export const ListBurgers = styled.ul`
     overflow: auto;
     align-items: center;
     gap: 20px;
+    min-width: 72.8%;
 
     li{
         background-color: #ffffff;

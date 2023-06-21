@@ -21,6 +21,7 @@ export const CartBurgers = styled.div`
         min-height: 150px;
         width: 90%;
         margin: 0 auto;
+        padding: 0px 10px;
         background-color: var(--gray-0);
         border-radius: 0 0 8px 8px;
         max-height: 230px;
