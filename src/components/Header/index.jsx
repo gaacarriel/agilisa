@@ -21,7 +21,6 @@ export function Header({ burgers, filterSearch, search, setSearch }) {
                 value={search}
                 onChange={event => searchBurger(event.target.value)}
             />
-            <button onClick={() => console.log(filterSearch())}>Pesquisar</button>
         </HeaderStyled>
     )
 }

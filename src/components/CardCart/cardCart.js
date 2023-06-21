@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CardCartSyled = styled.li`
     display: flex;
+    justify-content: space-between;
 
     img{
         width: 95px;

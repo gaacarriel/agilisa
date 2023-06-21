@@ -45,7 +45,7 @@ export function HomePage({ burgers }){
             const total = listCart.reduce((acc, cur) => {
                 return acc + cur.price
             }, 0)
-            setCount(total)
+            setCount(total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
         }, [listCart])
 
     return (

@@ -33,37 +33,14 @@ export const HeaderStyled = styled.header`
         padding: 10px;
     }
 
-    button{
-        color: white;
-        position: absolute;
-        top: 64px;
-        right: 25px;
-        padding: 8px 10px;
-        border-radius: 8px;
-        border: 2px solid var(--color-primary);
-        background-color: var(--color-primary);
-        cursor: pointer;
-    }
-
-    @media (min-width: 768px){
-        button{
-            right: 44px;
-        }
-    }
-
     @media (min-width: 1024px){
         flex-direction: row;
         justify-content: space-between;
         padding: 15px 82px;
 
         input{
-            width: 30%;
+            width: 25.5%;
             margin: 0;
-        }
-
-        button{
-            top: 21px;
-            right: 88px;
         }
     }
 `
