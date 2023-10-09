@@ -12,6 +12,7 @@ export const ListBurgers = styled.ul`
     li{
         background-color: #ffffff;
         min-width: 250px;
+        max-width: 250px;
         min-height: 300px;
         border: 2px solid var(--gray-20);
         border-radius: 5px;
@@ -25,7 +26,7 @@ export const ListBurgers = styled.ul`
             img{
                 width: 171px;
                 height: 171px;
-                object-fit: cover;
+                object-fit: fill;
             }
         }
 
@@ -42,6 +43,7 @@ export const ListBurgers = styled.ul`
             }
 
             span{
+                height: 50px;
                 font-weight: 400;
                 font-size: 12px;
                 line-height: 16px;

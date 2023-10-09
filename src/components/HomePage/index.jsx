@@ -5,14 +5,14 @@ import { Cart } from "../Cart";
 import { Header } from "../Header";
 import { List } from "../List";
 
-export function HomePage({ burgers }){
+export function HomePage({ aluminumProfileList }){
 
     // Lógica para pesquisar
     const [search, setSearch] = useState('')
     function filterSearch(){
         const lowerSearch = search.toLowerCase()
 
-        return burgers.filter(burger =>
+        return aluminumProfileList.filter(burger =>
             burger.name.toLowerCase().includes(lowerSearch) 
             || 
             burger.category.toLowerCase().includes(lowerSearch))
@@ -21,8 +21,8 @@ export function HomePage({ burgers }){
     // Lógica para adicionar ao carrinho
     const [listCart, setListCart] = useState([])
     function addToCart(id){
-        const burgerBuyeded = burgers.filter((burger) =>  burger.id == id)
-        setListCart([...listCart, burgerBuyeded[0]])    
+        const aluminumProfileBuyeded = aluminumProfileList.filter((aluminumProfile) =>  aluminumProfile.id == id)
+        setListCart([...listCart, aluminumProfileBuyeded[0]])    
 
         const filtred = listCart.find((element) => element.id == id)
 
@@ -51,7 +51,7 @@ export function HomePage({ burgers }){
     return (
         <>
             <Header 
-                burgers={burgers} 
+                aluminumProfileList={aluminumProfileList} 
                 filterSearch={filterSearch}
                 search={search} 
                 setSearch={setSearch}
