@@ -10,8 +10,13 @@ export const HeaderStyled = styled.header`
 
     div{
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         gap: 5px;
+
+        img{
+            width: 50px;
+            height: 50px;
+        }
 
         h2{
             font-weight: 600;
@@ -19,7 +24,7 @@ export const HeaderStyled = styled.header`
         }
 
         span{
-            color: var(--color-secondary);
+            color: red;
             font-weight: 600;
         }
     }
